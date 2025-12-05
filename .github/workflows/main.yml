@@ -2,7 +2,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-push:
@@ -23,9 +23,9 @@ jobs:
       # 3. Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/cpp-odd-even:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/mostafa_mamdouh_2023040393:latest .
 
       # 4. Push the Docker image to Docker Hub
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/cpp-odd-even:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/mostafa_mamdouh_2023040393:latest

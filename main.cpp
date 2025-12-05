@@ -18,6 +18,6 @@ int main()
         cout << " enter :-- \n1 : once again  \n0 : exit  \n ";
         cin>>mode;
     }
-    cout<<"exit success !!! \n ";
+    cout<<" ---> exit success ! \n ";
     return 0;
 }

@@ -1,4 +1,5 @@
 name: Build and Push Docker Image
+
 on:
   push:
     branches:
@@ -17,15 +18,15 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ DOCKER_USERNAME }}
-          password: ${{ DOCKER_TOKEN }}
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       # 3. Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t ${{ DOCKER_USERNAME }}/mostafa_mamdouh_2023040393:latest .
+          docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/mostafa_mamdouh_2023040393:latest .
 
       # 4. Push the Docker image to Docker Hub
       - name: Push Docker image
         run: |
-          docker push ${{ DOCKER_USERNAME }}/mostafa_mamdouh_2023040393:latest
+          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/mostafa_mamdouh_2023040393:latest
